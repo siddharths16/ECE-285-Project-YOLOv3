@@ -1,0 +1,21 @@
+##Resume Training
+python train.py --resume --data data_voc/2012_train.data --cfg cfg/yolov3-voc.cfg --img-size 320 --epochs 125
+
+
+##Train
+python train.py --data data_voc/2012_train.data --cfg cfg/yolov3-voc.cfg --img-size 320 --epochs 100
+
+##Detect
+python detect.py --data data_voc/2012_train.data --cfg cfg/yolov3-voc.cfg --weights weights/best.pt
+
+
+####Ideas
+1. Change leaky to ELU.
+2. Smart Anchor selection using K-Means++
+3. New type of noise. 
+4. New techniques for image augmentation.
+5. Deformable convolution.
+6. Making convultions shift-invariant.
+
+
+
