@@ -1,0 +1,6 @@
+classes=20
+train=./data_voc/2012_train.txt
+valid=./data_voc/2012_val.txt
+names=./data_voc/voc.names
+backup=backup/
+
