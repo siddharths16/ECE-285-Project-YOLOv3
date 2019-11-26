@@ -19,6 +19,7 @@ wdir = 'weights' + os.sep  # weights dir
 last = wdir + 'last.pt'
 best = wdir + 'best.pt'
 results_file = 'results.txt'
+loss_file = 'train_loss.txt'
 
 # Hyperparameters (k-series, 53.3 mAP yolov3-spp-320) https://github.com/ultralytics/yolov3/issues/310
 hyp = {'giou': 3.31,  # giou loss gain
@@ -266,9 +267,10 @@ def train():
 
             # Run model
             pred = model(imgs)
-            #print("Shape of prediction pred[0]: ", pred[0].shape)
-            #print("Shape of prediction pred[1]: ", pred[1].shape)
-           # print(pred)
+            #print("Length of predictions: ", len(pred))
+            #for si in range(len(pred)):
+            #    print("Shape of pred[",si,"]: ", pred[si].shape)
+
             # Compute loss
             loss, loss_items = compute_loss(pred, targets, model)
             #print("Shape of loss: ", loss)
@@ -330,6 +332,9 @@ def train():
                       'Precision', 'Recall', 'mAP', 'F1', 'val GIoU', 'val Objectness', 'val Classification']
             for xi, title in zip(x, titles):
                 tb_writer.add_scalar(title, xi, epoch)
+                if (title == 'Train loss'):
+                    with open(loss_file, 'a') as fl:
+                        fl.write("Epoch: " + str(epoch) + " Losss: " + str(xi.item()) + '\n')
 
         # Update best mAP
         fitness = sum(results[4:])  # total loss
