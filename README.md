@@ -2,18 +2,10 @@
 
 This directory contains PyTorch YOLOv3 implementation towards ECE-285 Final Project on Multi-Object Detection. 
 
-# Credits
-This repository is forked from https://github.com/ultralytics/yolov3.
-The Deformable Convolution respository is forked from https://github.com/CharlesShang/DCNv2.
-
 # Description
-
-The https://github.com/ultralytics/yolov3 repo contains inference and training code for YOLOv3 in PyTorch. The code works on Linux, MacOS and Windows. Training is done on the COCO dataset by default: https://cocodataset.org/#home. **Credit to Joseph Redmon for YOLO:** https://pjreddie.com/darknet/yolo/.
-
-
+The repo contains inference and training code for YOLOv3 in PyTorch. Training is done on the VOCPascal dataset: http://host.robots.ox.ac.uk/pascal/VOC/
 
 # Requirements
-
 Python 3.7 or later with the following `pip3 install -U -r requirements.txt` packages:
 
 - `numpy`
@@ -21,15 +13,19 @@ Python 3.7 or later with the following `pip3 install -U -r requirements.txt` pac
 - `opencv-python`
 - `tqdm`
 
+
 # Training
 
-**Start Training:** `python3 train.py` to begin training after downloading COCO data with `data/get_coco_dataset.sh`. Each epoch trains on 117,263 images from the train and validate COCO sets, and tests on 5000 images from the COCO validate set.
+**Start Training:** 
+python train.py --data data_voc/2012_train.data --cfg cfg/yolov3-voc.cfg --img-size <> --epochs <>
 
 **Resume Training:** `python3 train.py --resume` to resume training from `weights/last.pt`.
 
-**Plot Training:** `from utils import utils; utils.plot_results()` plots training results from `coco_16img.data`, `coco_64img.data`, 2 example datasets available in the `data/` folder, which train and test on the first 16 and 64 images of the COCO2014-trainval dataset.
+# Credits
+This repository is forked from https://github.com/ultralytics/yolov3.
+The Deformable Convolution respository is forked from https://github.com/CharlesShang/DCNv2.
+**Credit to Joseph Redmon for YOLO:** https://pjreddie.com/darknet/yolo/.
 
-<img src="https://user-images.githubusercontent.com/26833433/63258271-fe9d5300-c27b-11e9-9a15-95038daf4438.png" width="900">
 
 ## Image Augmentation
 
