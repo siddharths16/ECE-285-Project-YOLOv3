@@ -23,7 +23,7 @@ python train.py --data data_voc/2012_train.data --cfg cfg/yolov3-voc.cfg --img-s
 
 
 ## demo
-<img src=aeroplane.jpg, width="500">
+<img src=https://github.com/siddharths16/ECE-285-Project-YOLOv3/aeroplane.jpg, width="500">
 
 # Credits
 This repository is forked from https://github.com/ultralytics/yolov3.
