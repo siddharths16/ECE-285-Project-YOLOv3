@@ -17,13 +17,15 @@ Python 3.7 or later with the following `pip3 install -U -r requirements.txt` pac
 # Training
 
 **Start Training:** 
-python train.py --data data_voc/2012_train.data --cfg cfg/yolov3-voc.cfg --img-size <> --epochs <>
+`python train.py --data data_voc/2012_train.data --cfg cfg/yolov3-voc.cfg --img-size <> --epochs <>`
 
 **Resume Training:** `python3 train.py --resume` to resume training from `weights/last.pt`.
 
 
 ## demo
-<img src= "aeroplane.jpg">
+`python detect.py --source <file.jpg> --data data_voc/2012_train.data --cfg cfg/yolov3-voc.cfg --weights <>`
+
+<img src= "aeroplane.jpg" width=300>
 
 # Credits
 This repository is forked from https://github.com/ultralytics/yolov3.
