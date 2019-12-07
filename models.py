@@ -1,8 +1,9 @@
 import torch.nn.functional as F
-
+from DCNv2.dcn_v2 import DCN
 from utils.google_utils import *
 from utils.parse_config import *
 from utils.utils import *
+
 
 ONNX_EXPORT = False
 
@@ -24,18 +25,61 @@ def create_modules(module_defs, img_size, arc):
             filters = int(mdef['filters'])
             kernel_size = int(mdef['size'])
             pad = (kernel_size - 1) // 2 if int(mdef['pad']) else 0
+#            modules.add_module('Conv2d', DCN(in_channels=output_filters[-1],
+#                                                   out_channels=filters,
+#                                                   kernel_size=kernel_size,
+#                                                   stride=int(mdef['stride']),
+#                                                   padding=pad,
+#                                                   deformable_groups=2).cuda())
+
             modules.add_module('Conv2d', nn.Conv2d(in_channels=output_filters[-1],
                                                    out_channels=filters,
                                                    kernel_size=kernel_size,
                                                    stride=int(mdef['stride']),
                                                    padding=pad,
                                                    bias=not bn))
+     
             if bn:
                 modules.add_module('BatchNorm2d', nn.BatchNorm2d(filters, momentum=0.1))
             if mdef['activation'] == 'leaky':  # TODO: activation study https://github.com/ultralytics/yolov3/issues/441
+                
                 modules.add_module('activation', nn.LeakyReLU(0.1, inplace=True))
+                #modules.add_module('activation', nn.ELU(0.1, inplace=True))
                 # modules.add_module('activation', nn.PReLU(num_parameters=1, init=0.10))
                 # modules.add_module('activation', Swish())
+
+        elif mdef['type'] == 'dconvolutional':
+            if 'batch_normalize' in mdef:
+                bn = int(mdef['batch_normalize'])
+            else:
+                bn = False
+            filters = int(mdef['filters'])
+            print("Adding dconv")
+            kernel_size = int(mdef['size'])
+            pad = (kernel_size - 1) // 2 if int(mdef['pad']) else 0
+            modules.add_module('Conv2d', DCN(in_channels=output_filters[-1],
+                                                   out_channels=filters,
+                                                   kernel_size=kernel_size,
+                                                   stride=int(mdef['stride']),
+                                                   padding=pad,
+                                                   deformable_groups=2))
+
+#            modules.add_module('Conv2d', nn.Conv2d(in_channels=output_filters[-1],
+#                                                   out_channels=filters,
+#                                                   kernel_size=kernel_size,
+#                                                  stride=int(mdef['stride']),
+#                                                   padding=pad,
+#                                                   bias=not bn))
+     
+            if bn:
+                modules.add_module('BatchNorm2d', nn.BatchNorm2d(filters, momentum=0.1))
+            if mdef['activation'] == 'leaky':  # TODO: activation study https://github.com/ultralytics/yolov3/issues/441
+                
+                modules.add_module('activation', nn.LeakyReLU(0.1, inplace=True))
+                #modules.add_module('activation', nn.ELU(0.1, inplace=True))
+                # modules.add_module('activation', nn.PReLU(num_parameters=1, init=0.10))
+                # modules.add_module('activation', Swish())
+
 
         elif mdef['type'] == 'maxpool':
             kernel_size = int(mdef['size'])
@@ -221,7 +265,7 @@ class Darknet(nn.Module):
 
         for i, (mdef, module) in enumerate(zip(self.module_defs, self.module_list)):
             mtype = mdef['type']
-            if mtype in ['convolutional', 'upsample', 'maxpool']:
+            if mtype in ['dconvolutional','convolutional', 'upsample', 'maxpool']:
                 x = module(x)
             elif mtype == 'route':
                 layers = [int(x) for x in mdef['layers'].split(',')]
@@ -309,7 +353,7 @@ def load_darknet_weights(self, weights, cutoff=-1):
 
     ptr = 0
     for i, (mdef, module) in enumerate(zip(self.module_defs[:cutoff], self.module_list[:cutoff])):
-        if mdef['type'] == 'convolutional':
+        if mdef['type'] == 'convolutional' or  mdef['type'] == 'dconvolutional' :
             conv_layer = module[0]
             if mdef['batch_normalize']:
                 # Load BN bias, weights, running mean and running variance
@@ -356,7 +400,7 @@ def save_weights(self, path='model.weights', cutoff=-1):
 
         # Iterate through layers
         for i, (mdef, module) in enumerate(zip(self.module_defs[:cutoff], self.module_list[:cutoff])):
-            if mdef['type'] == 'convolutional':
+            if mdef['type'] == 'convolutional' or mdef['type'] == 'dconvolutional': 
                 conv_layer = module[0]
                 # If batch norm, load bn first
                 if mdef['batch_normalize']:

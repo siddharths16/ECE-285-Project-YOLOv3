@@ -96,6 +96,7 @@ def train():
         # optimizer = AdaBound(pg0, lr=hyp['lr0'], final_lr=0.1)
     else:
         optimizer = optim.SGD(pg0, lr=hyp['lr0'], momentum=hyp['momentum'], nesterov=True)
+        #optimizer = optim.ASGD(pg0, lr=hyp['lr0'])
     optimizer.add_param_group({'params': pg1, 'weight_decay': hyp['weight_decay']})  # add pg1 with weight_decay
     del pg0, pg1
 
@@ -192,7 +193,7 @@ def train():
                                   hyp=hyp,  # augmentation hyperparameters
                                   rect=opt.rect,  # rectangular training
                                   image_weights=opt.img_weights,
-                                  cache_labels=True if epochs > 10 else False,
+                                  cache_labels=False if epochs > 10 else False,
                                   cache_images=False if opt.prebias else opt.cache_images)
 
     # Dataloader
