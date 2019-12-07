@@ -1,28 +1,16 @@
-<table style="width:100%">
-  <tr>
-    <td>
-      <img src="https://user-images.githubusercontent.com/26833433/61591130-f7beea00-abc2-11e9-9dc0-d6abcf41d713.jpg">
-    </td>
-    <td align="center">
-    <a href="https://www.ultralytics.com" target="_blank">
-    <img src="https://storage.googleapis.com/ultralytics/logo/logoname1000.png" width="160"></a>
-      <img src="https://user-images.githubusercontent.com/26833433/61591093-2b4d4480-abc2-11e9-8b46-d88eb1dabba1.jpg">
-          <a href="https://itunes.apple.com/app/id1452689527" target="_blank">
-    <img src="https://user-images.githubusercontent.com/26833433/50044365-9b22ac00-0082-11e9-862f-e77aee7aa7b0.png" width="180"></a>
-    </td>
-    <td>
-      <img src="https://user-images.githubusercontent.com/26833433/61591100-55066b80-abc2-11e9-9647-52c0e045b288.jpg">
-    </td>
-  </tr>
-</table>
-
 # Introduction
 
-This directory contains PyTorch YOLOv3 software developed by Ultralytics LLC, and **is freely available for redistribution under the GPL-3.0 license**. For more information please visit https://www.ultralytics.com.
+This directory contains PyTorch YOLOv3 implementation towards ECE-285 Final Project on Multi-Object Detection. 
+
+# Credits
+This repository is forked from https://github.com/ultralytics/yolov3.
+The Deformable Convolution respository is forked from https://github.com/CharlesShang/DCNv2.
 
 # Description
 
 The https://github.com/ultralytics/yolov3 repo contains inference and training code for YOLOv3 in PyTorch. The code works on Linux, MacOS and Windows. Training is done on the COCO dataset by default: https://cocodataset.org/#home. **Credit to Joseph Redmon for YOLO:** https://pjreddie.com/darknet/yolo/.
+
+
 
 # Requirements
 
@@ -32,18 +20,6 @@ Python 3.7 or later with the following `pip3 install -U -r requirements.txt` pac
 - `torch >= 1.1.0`
 - `opencv-python`
 - `tqdm`
-
-# Tutorials
-
-* [GCP Quickstart](https://github.com/ultralytics/yolov3/wiki/GCP-Quickstart)
-* [Transfer Learning](https://github.com/ultralytics/yolov3/wiki/Example:-Transfer-Learning)
-* [Train Single Image](https://github.com/ultralytics/yolov3/wiki/Example:-Train-Single-Image)
-* [Train Single Class](https://github.com/ultralytics/yolov3/wiki/Example:-Train-Single-Class)
-* [Train Custom Data](https://github.com/ultralytics/yolov3/wiki/Train-Custom-Data)
-
-# Jupyter Notebook
-
-Our Jupyter [notebook](https://colab.research.google.com/github/ultralytics/yolov3/blob/master/examples.ipynb) provides quick training, inference and testing examples.
 
 # Training
 
