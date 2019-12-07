@@ -26,10 +26,12 @@ Python 3.7 or later with the following `pip3 install -U -r requirements.txt` pac
 ## demo
 - `python detect.py --source <file.jpg> --data data_voc/2012_train.data --cfg cfg/yolov3-voc.cfg --weights <>`
 
-<img src= "aeroplane.jpg" width=300>
+<img src= "aeroplane.jpg" width=400>    <img src= "car.jpg" width=400>
 
 ## mAP calculation/Inference
 - `python test.py --data data_voc/2012_train.data --cfg cfg/yolov3-voc.cfg --img-size <> --epochs <>` 
+
+## Google Drive Links to pre-trained models
 
 
 ## Image Augmentation
