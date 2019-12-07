@@ -21,6 +21,10 @@ python train.py --data data_voc/2012_train.data --cfg cfg/yolov3-voc.cfg --img-s
 
 **Resume Training:** `python3 train.py --resume` to resume training from `weights/last.pt`.
 
+
+## demo
+<img src=/output/aeroplane.jpg, width="500">
+
 # Credits
 This repository is forked from https://github.com/ultralytics/yolov3.
 The Deformable Convolution respository is forked from https://github.com/CharlesShang/DCNv2.
