@@ -32,6 +32,15 @@ Python 3.7 or later with the following `pip3 install -U -r requirements.txt` pac
 - `python test.py --data data_voc/2012_train.data --cfg cfg/yolov3-voc.cfg --img-size <> --epochs <>` 
 
 ## Google Drive Links to pre-trained models
+`YOLOv3 weights`
+
+Default: https://drive.google.com/open?id=1lU7vbVZewn6Up9O2NUYyYV1gQWXEMMtl
+
+Our Anchor Estimation and Focal Loss: https://drive.google.com/open?id=1LMZeOA9onrqVLWXFYngx19tSxb4WvpAK
+
+With Deformable Convolution: https://drive.google.com/open?id=14QVmdsUUK4SjH3859Rf41odAwVd5Czha
+
+`CenterNet wieghts`
 
 
 ## Image Augmentation
