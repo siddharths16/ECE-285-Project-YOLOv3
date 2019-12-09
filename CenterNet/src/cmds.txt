@@ -1,0 +1,14 @@
+python main.py ctdet --resume --exp_id pascal_dla_384 --dataset pascal --num_epochs 100 --lr_step 45,60
+
+
+###Test
+python test.py ctdet --exp_id dla --dataset pascal --load_model ../models/.. --flip_test
+
+##Test with input resolution
+python test.py ctdet --exp_id dla_test_512 --dataset pascal --load_model ../exp/ctdet/default_dla_384/ --input_res 512 --flip_test
+
+
+
+###Res with Conv
+python main.py ctdet --arch resdcn_18 --exp_id pascal_resdcn18_with_dcn --dataset pascal --num_epochs 10
+0 --lr_step 45,60

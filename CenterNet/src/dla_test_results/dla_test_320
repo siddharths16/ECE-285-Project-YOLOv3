@@ -1,0 +1,37 @@
+Fix size testing.
+training chunk_sizes: [32]
+The output will be saved to  /datasets/home/home-01/27/627/sisingh/Project/CenterNet/src/lib/../../exp/ctdet/dla_test_320
+heads {'hm': 20, 'wh': 2, 'reg': 2}
+Namespace(K=100, aggr_weight=0.0, agnostic_ex=False, arch='dla_34', aug_ddd=0.5, aug_rot=0, batch_size=32, cat_spec_wh=False, center_thresh=0.1, chunk_sizes=[32], data_dir='/datasets/home/home-01/27/627/sisingh/Project/CenterNet/src/lib/../../data', dataset='pascal', debug=0, debug_dir='/datasets/home/home-01/27/627/sisingh/Project/CenterNet/src/lib/../../exp/ctdet/dla_test_320/debug', debugger_theme='white', demo='', dense_hp=False, dense_wh=False, dep_weight=1, dim_weight=1, down_ratio=4, eval_oracle_dep=False, eval_oracle_hm=False, eval_oracle_hmhp=False, eval_oracle_hp_offset=False, eval_oracle_kps=False, eval_oracle_offset=False, eval_oracle_wh=False, exp_dir='/datasets/home/home-01/27/627/sisingh/Project/CenterNet/src/lib/../../exp/ctdet', exp_id='dla_test_320', fix_res=True, flip=0.5, flip_test=True, gpus=[0], gpus_str='0', head_conv=256, heads={'hm': 20, 'wh': 2, 'reg': 2}, hide_data_time=False, hm_hp=True, hm_hp_weight=1, hm_weight=1, hp_weight=1, input_h=320, input_res=320, input_w=320, keep_res=False, kitti_split='3dop', load_model='../exp/ctdet/default_dla_384/model_best.pth', lr=0.000125, lr_step=[90, 120], master_batch_size=32, mean=array([[[0.485, 0.456, 0.406]]], dtype=float32), metric='loss', mse_loss=False, nms=False, no_color_aug=False, norm_wh=False, not_cuda_benchmark=False, not_hm_hp=False, not_prefetch_test=False, not_rand_crop=False, not_reg_bbox=False, not_reg_hp_offset=False, not_reg_offset=False, num_classes=20, num_epochs=140, num_iters=-1, num_stacks=1, num_workers=4, off_weight=1, output_h=80, output_res=80, output_w=80, pad=31, peak_thresh=0.2, print_iter=0, rect_mask=False, reg_bbox=True, reg_hp_offset=True, reg_loss='l1', reg_offset=True, resume=False, root_dir='/datasets/home/home-01/27/627/sisingh/Project/CenterNet/src/lib/../..', rot_weight=1, rotate=0, save_all=False, save_dir='/datasets/home/home-01/27/627/sisingh/Project/CenterNet/src/lib/../../exp/ctdet/dla_test_320', scale=0.4, scores_thresh=0.1, seed=317, shift=0.1, std=array([[[0.229, 0.224, 0.225]]], dtype=float32), task='ctdet', test=False, test_scales=[1.0], trainval=False, val_intervals=5, vis_thresh=0.3, wh_weight=0.1)
+==> initializing pascal test2007 data.
+loading annotations into memory...
+Done (t=0.14s)
+creating index...
+index created!
+Loaded val 4952 samples
+Creating model...
+loaded ../exp/ctdet/default_dla_384/model_best.pth, epoch 75
+Evaluating detections
+VOC07 metric? Yes
+AP for aeroplane = 0.7982
+AP for bicycle = 0.8252
+AP for bird = 0.7680
+AP for boat = 0.6797
+AP for bottle = 0.5736
+AP for bus = 0.8021
+AP for car = 0.8502
+AP for cat = 0.8607
+AP for chair = 0.6006
+AP for cow = 0.8298
+AP for diningtable = 0.7112
+AP for dog = 0.8566
+AP for horse = 0.8636
+AP for motorbike = 0.8516
+AP for person = 0.8113
+AP for pottedplant = 0.5329
+AP for sheep = 0.8064
+AP for sofa = 0.7751
+AP for train = 0.8417
+AP for tvmonitor = 0.7574
+Mean AP = 0.7698
+~~~~~~~~
