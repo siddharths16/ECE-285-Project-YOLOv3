@@ -75,6 +75,8 @@ This repository is forked from https://github.com/ultralytics/yolov3.
 
 The Deformable Convolution respository is forked from https://github.com/CharlesShang/DCNv2.
 
+Anti-aliasing models repo: https://github.com/adobe/antialiased-cnns
+
 **Credit to Joseph Redmon for YOLO:** https://pjreddie.com/darknet/yolo/.
 
 
