@@ -41,6 +41,7 @@ Our Anchor Estimation and Focal Loss: https://drive.google.com/open?id=1LMZeOA9o
 With Deformable Convolution: https://drive.google.com/open?id=14QVmdsUUK4SjH3859Rf41odAwVd5Czha
 
 `CenterNet wieghts`
+
 DLA-34 (With Deformable Convolution): https://drive.google.com/open?id=1lAdwRHdHxRjFGl8Zz16BSGG1r8lQK2v0
 
 ResNet-101 (Without Deformable Convolution): https://drive.google.com/open?id=1suaTpGWqjucCDr9H2J7KtVIqxHnPCT95
