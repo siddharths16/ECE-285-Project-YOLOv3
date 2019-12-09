@@ -51,8 +51,6 @@ Augmentation | Description
 --- | ---
 Translation | +/- 10% (vertical and horizontal)
 Rotation | +/- 5 degrees
-Shear | +/- 2 degrees (vertical and horizontal)
-Scale | +/- 10%
 Reflection | 50% probability (horizontal-only)
 H**S**V Saturation | +/- 50%
 HS**V** Intensity | +/- 50%
