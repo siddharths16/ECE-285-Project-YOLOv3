@@ -23,14 +23,19 @@ Python 3.7 or later with the following `pip3 install -U -r requirements.txt` pac
 - `python3 train.py --resume` to resume training from `weights/last.pt`.
 
 
-## demo
+## Demo
 - `python detect.py --source <file.jpg> --data data_voc/2012_train.data --cfg cfg/yolov3-voc.cfg --weights <>`
 
 <img src= "aeroplane.jpg" width=400>    <img src= "car.jpg" width=400>
 
 ## mAP calculation/Inference
 - `python test.py --data data_voc/2012_train.data --cfg cfg/yolov3-voc.cfg --img-size <> --epochs <>` 
-
+### For anti-aliased model
+- Download anti-aliased model from the google drive link in the following section.
+- To test for a diagonal translation up to 10 pixels (translation amount is user adjustable).
+ `python AAtest.py --data data_voc/2012_train.data --cfg cfg/yolov3-voc.cfg --weights AAyolov3.pt --batch-size 16 --img-size 320 --test_AA_shift 10 --AAmode 1`
+- To test other models with diagonal translation
+`python AAtest.py --data data_voc/2012_train.data --cfg cfg/yolov3-voc.cfg --weights <weights.pt> --batch-size 16 --img-size 320 --test_AA_shift 10 --AAmode 0`
 ## Google Drive Links to pre-trained models
 `YOLOv3 weights`
 
