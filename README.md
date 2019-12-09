@@ -58,7 +58,9 @@ HS**V** Intensity | +/- 50%
 
 # Credits
 This repository is forked from https://github.com/ultralytics/yolov3.
+
 The Deformable Convolution respository is forked from https://github.com/CharlesShang/DCNv2.
+
 **Credit to Joseph Redmon for YOLO:** https://pjreddie.com/darknet/yolo/.
 
 
