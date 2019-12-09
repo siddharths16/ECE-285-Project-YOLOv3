@@ -40,6 +40,8 @@ Our Anchor Estimation and Focal Loss: https://drive.google.com/open?id=1LMZeOA9o
 
 With Deformable Convolution: https://drive.google.com/open?id=14QVmdsUUK4SjH3859Rf41odAwVd5Czha
 
+With Anti-aliasing: https://drive.google.com/file/d/13Ue6g9QfLJ2sbQ28ah92cSCNiJd6GkxN/view?usp=sharing
+
 `CenterNet wieghts`
 
 DLA-34 (With Deformable Convolution): https://drive.google.com/open?id=1lAdwRHdHxRjFGl8Zz16BSGG1r8lQK2v0
