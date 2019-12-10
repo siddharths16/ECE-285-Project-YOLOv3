@@ -51,14 +51,13 @@ make
 ## Datset Setup
  Run
 
-    ~~~
     cd $CenterNet_ROOT/tools/
     bash get_pascal_voc.sh
-    ~~~
+
 - The above script includes:
     - Download, unzip, and move Pascal VOC images from the [VOC website](http://host.robots.ox.ac.uk/pascal/VOC/). 
     - [Download](https://storage.googleapis.com/coco-dataset/external/PASCAL_VOC.zip) Pascal VOC annotation in COCO format (from [Detectron](https://github.com/facebookresearch/Detectron/tree/master/detectron/datasets/data)). 
-    - Combine train/val 2007/2012 annotation files into a single json. 
+    - Combine train/val 2007/2012 annotation files into a single json.
 
 
 - Move the created `voc` folder to `data` (or create symlinks) to make the data folder like:
