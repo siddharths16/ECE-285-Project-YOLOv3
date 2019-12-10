@@ -13,18 +13,8 @@ Python 3.7 or later with the following `pip3 install -U -r requirements.txt` pac
 - `opencv-python`
 - `tqdm`
 
-
-# Training
-
-**Start Training:** 
-- `python train.py --data data_voc/2012_train.data --cfg cfg/yolov3-voc.cfg --img-size <> --epochs <>`
-
-**Resume Training:**
-- `python3 train.py --resume` to resume training from `weights/last.pt`.
-
-
 ## Demo
-- `python detect.py --source <file.jpg> --cfg cfg/yolov3-voc.cfg --weights <>`
+- `python detect.py --source <file.jpg> --cfg cfg/yolov3-voc.cfg --weights <>` //Download weights using the google drive links below. 
 
 <img src= "aeroplane.jpg" width=400>    <img src= "car.jpg" width=400>
 
@@ -36,6 +26,55 @@ Python 3.7 or later with the following `pip3 install -U -r requirements.txt` pac
  `python AAtest.py --data data_voc/2012_train.data --cfg cfg/yolov3-voc.cfg --weights AAyolov3.pt --batch-size 16 --img-size 320 --test_AA_shift 10 --AAmode 1`
 - To test other models with diagonal translation
 `python AAtest.py --data data_voc/2012_train.data --cfg cfg/yolov3-voc.cfg --weights <weights.pt> --batch-size 16 --img-size 320 --test_AA_shift 10 --AAmode 0`
+
+## Dataset
+Download VOCPascal2012/2007 dataset from http://host.robots.ox.ac.uk/pascal/VOC/. data_voc folder needs to have VOCdevkit folder in which you would need to put VOCPascal2012 and VOCPascal2007 folder containing images. To get the format which is read by the model, you would need run voc_label.py in the data_voc folder without any arguments.
+
+## Training
+After organizing the dataset folder as mentioned above, we can start to train the model using the following command. Please choose the configuration file accordingly for the model you wish to train. We have setup the model to train on following configurations:
+- Default: yolov3-voc.cfg
+- With Group Normalization: yolov3-voc-grpnorm.cfg
+- Focal Loss: yolov3-voc-anchors_plus_focal_loss.cfg
+- With deformable convolution: 	yolov3-voc_deconv.cfg
+
+**Start Training:** 
+- `python train.py --data data_voc/2012_train.data --cfg cfg/yolov3-voc.cfg --img-size <> --epochs <>`
+
+**Resume Training:**
+- `python3 train.py --resume` to resume training from `weights/last.pt`.
+
+
+**Note** 
+To train the model with Deformable Convolution you would need to setup the environment. This is because the DNCv2 repository requires us to run a shell file tries to write something to site-packages directory for which we do not have access. Using conda environment, it make changes in the local site-packages which we resorted to. Here, to make it easy to check other model implementations, we have separated the DCNv2 part. You can run all the models as it is without requiring any environment initialization. Please follow the below instructions to train/test deformable convolution model. Also, you can use the same environment to run CenterNet model.
+
+
+~~~
+conda create --name yolov3 python=3.6
+~~~
+
+~~~
+conda activate yolov3
+~~~
+
+~~~
+conda install pytorch==1.1.0 torchvision==0.3.0 cudatoolkit=10.0 -c pytorch
+~~~
+
+~~~
+# COCOAPI=/path/to/clone/cocoapi
+git clone https://github.com/cocodataset/cocoapi.git $COCOAPI
+cd $COCOAPI/PythonAPI
+make
+python setup.py install --user
+~~~
+
+~~~
+Go to cloned repo in DCNv2 directory and run:
+./make.sh
+~~~
+
+Now you can copy the `models_dc.py` to `models.py` and can start training the YOLOv3 with deformable convolution using the same command as show above and selecting appropriate cfg file.
+
 ## Google Drive Links to pre-trained models
 `YOLOv3 weights`
 
