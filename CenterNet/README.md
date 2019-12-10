@@ -80,9 +80,9 @@ make
 ## Testing
 
 ~~~
-python test.py ctdet --exp_id <> --arch <> --dataset pascal --input_res <> --load_model <weights>
+python test.py ctdet --exp_id <> --arch <> --dataset pascal --input_res <>  <weights>
 # flip test
-python test.py ctdet --exp_id <> --arch <> --dataset pascal --input_res <> --flip_test <weights>
+python test.py ctdet --exp_id <> --arch <> --dataset pascal --input_res <> --load_model <weights> --flip_test 
 ~~~
 --arch could be: hourglass, resdcn_101, resdcn_18
 
