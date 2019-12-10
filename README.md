@@ -78,16 +78,6 @@ With Deformable Convolution: https://drive.google.com/open?id=14QVmdsUUK4SjH3859
 
 With Anti-aliasing: https://drive.google.com/file/d/13Ue6g9QfLJ2sbQ28ah92cSCNiJd6GkxN/view?usp=sharing
 
-`CenterNet wieghts`
-
-DLA-34 (With Deformable Convolution): https://drive.google.com/open?id=1lAdwRHdHxRjFGl8Zz16BSGG1r8lQK2v0
-
-ResNet-101 (Without Deformable Convolution): https://drive.google.com/open?id=1suaTpGWqjucCDr9H2J7KtVIqxHnPCT95
-
-ResNet-101 (With Deformable Convolution): https://drive.google.com/open?id=1d9hX7TlNUtewjwvtSwwsSMZf5urfU1Y2
-
-
-
 ## Image Augmentation
 
 `datasets.py` applies random OpenCV-powered (https://opencv.org/) augmentation to the input images in accordance with the following specifications. Augmentation is applied **only** during training, not during inference. Bounding boxes are automatically tracked and updated with the images. 416 x 416 examples pictured below.
