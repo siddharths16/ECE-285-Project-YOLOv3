@@ -78,9 +78,28 @@ make
   The `VOCdevkit` folder is needed to run the evaluation script from [faster rcnn](https://github.com/rbgirshick/py-faster-rcnn/blob/master/tools/reval.py).
 
 ## Testing
+
 ~~~
-python demo.py ctdet --demo /path/to/image/or/folder/or/video --load_model ../models/ctdet_coco_dla_2x.pth
+python test.py ctdet --exp_id <> --arch <> --dataset pascal --input_res <> --load_model <weights>
+# flip test
+python test.py ctdet --exp_id <> --arch <> --dataset pascal --input_res <> --flip_test <weights>
 ~~~
+--arch could be: hourglass, resdcn_101, resdcn_18
+
+## Training 
+
+~~~
+python main.py ctdet --exp_id <folder_id> --batch_size <> --arch <> --dataset pascal --num_epochs 100 --lr_step 45,60
+~~~
+
+
+## CenterNet wieghts
+
+DLA-34 (With Deformable Convolution): https://drive.google.com/open?id=1lAdwRHdHxRjFGl8Zz16BSGG1r8lQK2v0
+
+ResNet-101 (Without Deformable Convolution): https://drive.google.com/open?id=1suaTpGWqjucCDr9H2J7KtVIqxHnPCT95
+
+ResNet-101 (With Deformable Convolution): https://drive.google.com/open?id=1d9hX7TlNUtewjwvtSwwsSMZf5urfU1Y2
 
 ## Citation
 
