@@ -1,6 +1,6 @@
 # Introduction
 
-This directory contains PyTorch YOLOv3 implementation towards ECE-285 Final Project on Multi-Object Detection. 
+This directory contains PyTorch YOLOv3 and CenterNet implementation towards ECE-285 Final Project on Multi-Object Detection. 
 
 # Description
 The repo contains inference and training code for YOLOv3 in PyTorch. Training is done on the VOCPascal dataset: http://host.robots.ox.ac.uk/pascal/VOC/
