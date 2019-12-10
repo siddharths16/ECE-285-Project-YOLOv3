@@ -1,5 +1,5 @@
 import torch.nn.functional as F
-#from DCNv2.dcn_v2 import DCN
+from DCNv2.dcn_v2 import DCN
 from utils.google_utils import *
 from utils.parse_config import *
 from utils.utils import *
@@ -64,12 +64,12 @@ def create_modules(module_defs, img_size, arc):
             print("Adding dconv")
             kernel_size = int(mdef['size'])
             pad = (kernel_size - 1) // 2 if int(mdef['pad']) else 0
-            #modules.add_module('Conv2d', DCN(in_channels=output_filters[-1],
-            #                                       out_channels=filters,
-            #                                       kernel_size=kernel_size,
-            #                                       stride=int(mdef['stride']),
-            #                                       padding=pad,
-            #                                       deformable_groups=2))
+            modules.add_module('Conv2d', DCN(in_channels=output_filters[-1],
+                                                   out_channels=filters,
+                                                   kernel_size=kernel_size,
+                                                   stride=int(mdef['stride']),
+                                                   padding=pad,
+                                                   deformable_groups=2))
 
 #            modules.add_module('Conv2d', nn.Conv2d(in_channels=output_filters[-1],
 #                                                   out_channels=filters,
