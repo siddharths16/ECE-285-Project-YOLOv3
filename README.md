@@ -14,10 +14,10 @@ Python 3.7 or later with the following `pip3 install -U -r requirements.txt` pac
 - `tqdm`
 
 ## Demo
-`python detect.py --source <folder_with_source_images> --cfg cfg/<cfg_file> --weights <weights_file.pt>`  
+`python detect.py --source <folder_with_source_images> --cfg cfg/<cfg_file> --weights <weights_file.pt>` 
+- Sample images are already placed in data/samples
 - Download weights using the google drive links below Eg.wts_anchor_plus_focal_loss.pt
 - Use appropriate cfg file in command Eg.yolov3-voc-anchors_plus_focal_loss.cfg
-- Sample images are already placed in data/samples
 - Run notebook "Demo" to view images with detected objects.
 
 <img src= "aeroplane.jpg" width=400>    <img src= "car.jpg" width=400>
