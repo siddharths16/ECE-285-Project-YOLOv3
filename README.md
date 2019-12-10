@@ -61,15 +61,7 @@ conda install pytorch==1.1.0 torchvision==0.3.0 cudatoolkit=10.0 -c pytorch
 ~~~
 
 ~~~
-# COCOAPI=/path/to/clone/cocoapi
-git clone https://github.com/cocodataset/cocoapi.git $COCOAPI
-cd $COCOAPI/PythonAPI
-make
-python setup.py install --user
-~~~
-
-~~~
-Go to cloned repo in DCNv2 directory and run:
+git clone this repo and go to the DCNv2 directory and run:
 ./make.sh
 ~~~
 
