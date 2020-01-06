@@ -82,6 +82,8 @@ With Deformable Convolution: https://drive.google.com/open?id=14QVmdsUUK4SjH3859
 
 With Anti-aliasing: https://drive.google.com/file/d/13Ue6g9QfLJ2sbQ28ah92cSCNiJd6GkxN/view?usp=sharing
 
+# [Project Report](Project285_final.pdf)
+
 ## Image Augmentation
 
 `datasets.py` applies random OpenCV-powered (https://opencv.org/) augmentation to the input images in accordance with the following specifications. Augmentation is applied **only** during training, not during inference. Bounding boxes are automatically tracked and updated with the images. 416 x 416 examples pictured below.
